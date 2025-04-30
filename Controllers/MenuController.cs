@@ -1,3 +1,5 @@
+// ADMIN ONLY
+
 using Microsoft.AspNetCore.Mvc;
 using FoodOrderingSystem.Models;
 using FoodOrderingSystem.Data;
