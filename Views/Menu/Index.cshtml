@@ -1,0 +1,37 @@
+@model IEnumerable<FoodOrderingSystem.Models.Dish>
+
+<h2>Menu</h2>
+
+<p>
+    <a asp-action="Create" class="btn btn-primary">Add New Dish</a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Price (RM)</th>
+            <th>Category</th>
+            <th>Available</th>
+            <th>Special</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+    @foreach (var dish in Model)
+    {
+        <tr>
+            <td>@dish.Name</td>
+            <td>@dish.Price</td>
+            <td>@dish.Category</td>
+            <td>@dish.IsAvailable</td>
+            <td>@dish.IsSpecialToday</td>
+            <td>
+                <a asp-action="Details" asp-route-id="@dish.Id">View</a> |
+                <a asp-action="Edit" asp-route-id="@dish.Id">Edit</a> |
+                <a asp-action="Delete" asp-route-id="@dish.Id">Delete</a>
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>
